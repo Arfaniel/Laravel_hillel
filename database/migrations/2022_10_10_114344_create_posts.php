@@ -31,8 +31,6 @@ return new class extends Migration
 
     }
 
-
-
     /**
      * Reverse the migrations.
      *
@@ -40,7 +38,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('post_tag');
         Schema::dropIfExists('posts');
     }
 };

@@ -25,12 +25,11 @@ class UserController
     public function authorsCategoryTag($userId, $categoryId, $tagId)
     {
         $user = User::find($userId);
-
+        $tag = Tag::find($tagId);
         $posts = Post::whereHas('user', function ($user) use ($userId) {
             $user->where('id', $userId);
         })->where('category_id', $categoryId)->get();
-        $tags = Tag::has('post_id', '=', 16)->get();
-        dd($tags);
+
 
         return view('authorsCategoryTag', compact('posts', 'user'));
     }
