@@ -15,14 +15,8 @@ class UserController
     }
     public function authorsCategory($userId, $categoryId)
     {
-        $category = Category::find($categoryId);
-        $categoryPosts = $category->posts;
         $user = User::find($userId);
-        $userPosts = $user->posts;
-        $posts = Post::whereHas('posts', function($categoryId, $post){
-            $post->where('category_id', '=', $categoryId);
-        })->get();
-        dd($posts);
+        $posts = Post::whereHas('user', function ($user) use ($userId) { $user->where('id', $userId); })->where('category_id', $categoryId)->get();
         return view('authorsCategory', compact('posts', 'user'));
     }
 }

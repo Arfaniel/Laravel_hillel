@@ -2,22 +2,6 @@
 
 @section('title', 'Posts')
 
-{{--@section('breadcrumbs')--}}
-{{--    @include('particials.breadcrumbs', [--}}
-{{--        'links'=> [--}}
-{{--            [--}}
-{{--                'link' => '/categories',--}}
-{{--                'name' => 'Category List'--}}
-{{--            ], [--}}
-{{--                'link' => '/users',--}}
-{{--                'name' => 'Users'--}}
-{{--            ], [--}}
-{{--                'link' => '/',--}}
-{{--                'name' => 'Post List'--}}
-{{--            ]--}}
-{{--        ]--}}
-{{--    ])--}}
-{{--@endsection--}}
 
 @section('content')
     <h1>Posts</h1>
@@ -40,7 +24,7 @@
                 <th scope="row">{{ $post->title }}</th>
                 <td><a href="author/{{ $post->user->id }}"> {{ $post->user->name }} </a></td>
                 <td><a href="category/{{ $post->category->id }}">{{ $post->category->title }}</a></td>
-                <td></td>
+{{--                <td>{{ $post->tags->pluck('title')->join(', ') }}</td>--}}
                 <td>{{ $post->body }}</td>
                 <td>{{ date_format($post->updated_at, "Y-m-d") }}</td>
             </tr>

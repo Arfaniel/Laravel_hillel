@@ -9,6 +9,7 @@ class CategoryController
     public function category(Category $category)
     {
         $posts = $category->posts;
+//        dd($posts);
         return view('category', compact('category', 'posts'));
     }
 }
