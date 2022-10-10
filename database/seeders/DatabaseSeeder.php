@@ -22,7 +22,7 @@ class DatabaseSeeder extends Seeder
         $posts = Post::factory(100)->make()->each(function ($post) use ($categories, $users, $tags){
             $post->category_id = $categories->random()->id;
             $post->user_id = $users->random()->id;
-            $post->tag_id = $tags->random()->id;
+//            $post->tag_id = $tags->random()->id;
             $post->save();
         });
 

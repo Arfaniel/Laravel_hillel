@@ -8,7 +8,7 @@ class TagController
 {
     public function tag(Tag $tag)
     {
-        $posts = $tag->posts();
+        $posts = $tag->posts;
         return view('tag', compact('posts', 'tag'));
     }
 }
