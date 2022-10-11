@@ -3,7 +3,7 @@
 @section('title', 'Author')
 
 @section('content')
-    <h1>{{ $user->name }}</h1>
+    <h1>{{ $user->name }} => {{ $category->title }}</h1>
     <table class="table">
         <thead>
         <tr>
