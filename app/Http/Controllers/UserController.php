@@ -24,13 +24,9 @@ class UserController
     }
     public function authorsCategoryTag($userId, $categoryId, $tagId)
     {
-        $user = User::find($userId);
-        $tag = Tag::find($tagId);
-        $posts = Post::whereHas('user', function ($user) use ($userId) {
-            $user->where('id', $userId);
-        })->where('category_id', $categoryId)->get();
-
-
-        return view('authorsCategoryTag', compact('posts', 'user'));
+        $posts = Post::whereHas('tags', function ($tag) use ($tagId) {
+            $tag->where('tag_id', $tagId);
+        })->where('user_id', $userId)->where('category_id', $categoryId)->get();
+        return view('authorsCategoryTag', compact('posts'));
     }
 }

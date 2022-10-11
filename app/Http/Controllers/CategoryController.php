@@ -11,4 +11,9 @@ class CategoryController
         $posts = $category->posts;
         return view('category', compact('category', 'posts'));
     }
+    public function index()
+    {
+        $categories = Category::all();
+        return view('category/index', compact('categories'));
+    }
 }
