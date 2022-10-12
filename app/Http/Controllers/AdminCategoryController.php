@@ -13,6 +13,7 @@ class AdminCategoryController
         $categories = Category::paginate(10);
         return view('/admin/category/index', compact('categories'));
     }
+
     public function create()
     {
         $category = new Category();
@@ -38,12 +39,19 @@ class AdminCategoryController
 
     public function update(Request $request)
     {
-        $category = Category::find($request->id);
-        $category->validate([
+        $request->validate([
             'title' => ['required', 'min:5', 'max:255'],
             'slug' => ['required', 'min:5', 'max:255',]
         ]);
-        $category->save($request->all());
+        $category = Category::find($request->id);
+        $category->update($request->all());
+        return redirect()->route('admin.category');
+    }
+
+    public function destroy(Request $request)
+    {
+        $category = Category::find($request->id);
+        $category->delete();
         return redirect()->route('admin.category');
     }
 }

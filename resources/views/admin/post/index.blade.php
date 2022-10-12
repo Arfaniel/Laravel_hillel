@@ -25,6 +25,7 @@
                 <td> {{ $post->category->title }} </td>
                 <td> {{ $post->tags->pluck('title')->join(', ') }} </td>
                 <td><a href="{{ route('admin.post.edit', $post->id) }}">Edit</a> </td>
+                <td><a href="{{ route('admin.post.destroy', $post->id) }}">Delete</a> </td>
             </tr>
         @empty
             <p>Empty</p>

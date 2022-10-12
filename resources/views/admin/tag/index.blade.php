@@ -18,7 +18,8 @@
                 <th scope="row">{{ $tag->id }}</th>
                 <th scope="row">{{ $tag->title }}</th>
                 <td> {{ $tag->slug }} </td>
-                <td><a href="{{ route('admin.tag.edit', $tag->id) }}">Edit</a> </td>
+                <td><a href="{{ route('admin.tag.edit', $tag->id) }}">Edit</a></td>
+                <td><a href="{{ route('admin.tag.destroy', $tag->id) }}">Delete</a></td>
             </tr>
         @empty
             <p>Empty</p>

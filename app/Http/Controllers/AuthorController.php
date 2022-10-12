@@ -7,7 +7,7 @@ use App\Models\Post;
 use App\Models\Tag;
 use App\Models\User;
 
-class UserController
+class AuthorController
 {
     public function author(User $user)
     {

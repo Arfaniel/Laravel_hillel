@@ -19,6 +19,7 @@
                 <th scope="row">{{ $category->title }}</th>
                 <td> {{ $category->slug }} </td>
                 <td><a href="{{ route('admin.category.edit', $category->id) }}">Edit</a> </td>
+                <td><a href="{{ route('admin.category.destroy', $category->id) }}">Delete</a> </td>
             </tr>
         @empty
             <p>Empty</p>

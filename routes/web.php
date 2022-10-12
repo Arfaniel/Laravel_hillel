@@ -16,11 +16,11 @@ use App\Http\Controllers\AdminPostController;
 */
 
 Route::get('/',[\App\Http\Controllers\PostController::class, 'index']);
-Route::get('/author/{user}',[\App\Http\Controllers\UserController::class, 'author']);
+Route::get('/author/{user}',[\App\Http\Controllers\AuthorController::class, 'author']);
 Route::get('/category/{category}',[\App\Http\Controllers\CategoryController::class, 'category']);
 Route::get('/tag/{tag}',[\App\Http\Controllers\TagController::class, 'tag']);
-Route::get('/author/{author}/category/{category}',[\App\Http\Controllers\UserController::class, 'authorsCategory']);
-Route::get('/author/{author}/category/{category}/tag/{tag}',[\App\Http\Controllers\UserController::class, 'authorsCategoryTag']);
+Route::get('/author/{author}/category/{category}',[\App\Http\Controllers\AuthorController::class, 'authorsCategory']);
+Route::get('/author/{author}/category/{category}/tag/{tag}',[\App\Http\Controllers\AuthorController::class, 'authorsCategoryTag']);
 
 Route::get('/admin/category/index',[AdminCategoryController::class, 'index'])->name('admin.category');
 Route::get('/admin/category/create',[AdminCategoryController::class, 'create'])->name('admin.category.create');
