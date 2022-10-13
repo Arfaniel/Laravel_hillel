@@ -2,6 +2,7 @@
 
 @section('content')
     <h1>Posts</h1>
+    <a href="{{ route('admin.panel') }}" class="btn btn-primary">Admin panel</a>
     <table class="table">
         <thead>
         <tr>

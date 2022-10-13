@@ -38,4 +38,5 @@
             <li class="page-item"><a class="page-link" href="{{ $posts->nextPageUrl() }}">Next</a></li>
         </ul>
     </nav>
+
 @endsection
