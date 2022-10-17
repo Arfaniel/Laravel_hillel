@@ -13,20 +13,22 @@ class PageController
         $pages = Page::all();
         return view('pages/index', compact('pages'));
     }
+
     public function show($id)
     {
         $page = Page::find($id);
         return view('pages/show', compact('page'));
     }
+
     public function addComment(Request $request, $id)
     {
         $request->validate([
-            'body'=> ['required', 'min:5']
-            ]);
+            'body' => ['required', 'min:5']
+        ]);
         $page = Page::find($id);
         $comment = new Comment();
         $comment->body = $request->input('body');
         $page->comments()->save($comment);
-        return redirect()->route('page.show', ['id'=> $page->id]);
+        return redirect()->route('page.show', ['id' => $page->id]);
     }
 }

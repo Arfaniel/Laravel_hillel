@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 
 
-class AdminCategoryController extends Controller
+class CategoryController extends Controller
 {
 
     public function index()

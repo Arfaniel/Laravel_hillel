@@ -8,7 +8,7 @@ use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class AdminPostController
+class PostController
 {
     public function index()
     {

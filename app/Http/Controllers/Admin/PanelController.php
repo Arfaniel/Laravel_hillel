@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\Auth;
 
-class AdminPanelController
+class PanelController
 {
     public function index()
     {

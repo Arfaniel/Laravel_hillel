@@ -18,7 +18,7 @@ class PageFactory extends Factory
     {
         return [
             'title' => $this->faker->name(),
-            'description'=> $this->faker->sentences(rand(2, 5), true),
+            'description' => $this->faker->sentences(rand(2, 5), true),
         ];
     }
 }
