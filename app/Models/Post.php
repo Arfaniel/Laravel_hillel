@@ -31,4 +31,9 @@ class Post extends Model
     {
         return $this->belongsToMany(Tag::class, 'post_tag')->withTimestamps();
     }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable');
+    }
 }

@@ -2,7 +2,9 @@
 
 @section('content')
     <h1>Categories</h1>
-    <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add category</a>
+    @can('create', \App\Models\Category::class)
+        <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add category</a>
+    @endcan
     <table class="table">
         <thead>
         <tr>
@@ -18,8 +20,10 @@
                 <th scope="row">{{ $category->id }}</th>
                 <th scope="row">{{ $category->title }}</th>
                 <td> {{ $category->slug }} </td>
-                <td><a href="{{ route('admin.category.edit', $category->id) }}">Edit</a> </td>
-                <td><a href="{{ route('admin.category.destroy', $category->id) }}">Delete</a> </td>
+                @can('create', \App\Models\Category::class)
+                    <td><a href="{{ route('admin.category.edit', $category->id) }}">Edit</a></td>
+                <td><a href="{{ route('admin.category.destroy', $category->id) }}">Delete</a></td>
+                @endcan
             </tr>
         @empty
             <p>Empty</p>

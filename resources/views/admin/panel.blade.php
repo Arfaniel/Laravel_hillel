@@ -3,12 +3,14 @@
 @section('content')
     <h1>Admin panel</h1>
     <ul class="list-group">
+        @can('tag-category-access')
         <li class="list-group-item">
             <a href="{{ route('admin.category') }}">Catogories</a>
         </li>
         <li class="list-group-item">
             <a href="{{ route('admin.tag') }}">Tags</a>
         </li>
+        @endcan
         <li class="list-group-item">
             <a href="{{ route('admin.post') }}">Posts</a>
         </li>

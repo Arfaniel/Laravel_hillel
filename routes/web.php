@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdminCategoryController;
-use App\Http\Controllers\AdminTagController;
-use App\Http\Controllers\AdminPostController;
+use App\Http\Controllers\Admin\AdminCategoryController;
+use App\Http\Controllers\Admin\AdminPanelController;
+use App\Http\Controllers\Admin\AdminPostController;
+use App\Http\Controllers\Admin\AdminTagController;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AdminPanelController;
+use App\Http\Controllers\PageController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,4 +57,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin/post/{id}/delete', [AdminPostController::class, 'destroy'])->name('admin.post.destroy');
 });
 
-
+Route::get('/page', [PageController::class, 'index'])->name('page');
+Route::get('/page/{id}', [PageController::class, 'show'])->name('page.show');
+Route::post('/page/comment/{id}', [PageController::class, 'addComment'])->name('page.add.comment');

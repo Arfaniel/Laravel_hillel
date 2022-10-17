@@ -15,7 +15,7 @@
         @forelse ($posts as $post)
             <tr>
                 <th scope="row">{{ $post->title }}</th>
-                <td>{{ $post->body }}</td>
+                <td>{{ $post->slug }}</td>
             </tr>
         @empty
             <p>Empty</p>
