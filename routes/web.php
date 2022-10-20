@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\PanelController;
 use App\Http\Controllers\Admin\PostController;
 use App\Http\Controllers\Admin\TagController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\Oauth\GitHubController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -18,6 +19,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/oauth/github/callback', GitHubController::class)->name('oauth.github.callback ');
 
 Route::get('/', [\App\Http\Controllers\PostController::class, 'index'])->name('main');
 Route::get('/author/{user}', [\App\Http\Controllers\AuthorController::class, 'author']);
