@@ -8,6 +8,8 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Oauth\GitHubController;
 use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\GeoIpController;
+use App\Http\Controllers\Admin\VisitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +23,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/oauth/github/callback', GitHubController::class)->name('oauth.github.callback ');
+Route::get('/geo', [GeoIpController::class, 'index']);
+Route::get('/visit', [VisitController::class, 'index']);
 
 Route::get('/', [\App\Http\Controllers\PostController::class, 'index'])->name('main');
 Route::get('/author/{user}', [\App\Http\Controllers\AuthorController::class, 'author']);

@@ -15,8 +15,8 @@ class GitHubController
         $code = request()->input('code'); //5db2bda9314797200eaf
         $url = 'https://github.com/login/oauth/access_token';
         $parameters = [
-            'client_id' => getenv('OAUTH_GITHUB_CLIENT_ID'),
-            'client_secret' => getenv('OAUTH_GITHUB_CLIENT_SECRET'),
+            'client_id' => config()->get('services.github.client_id'),
+            'client_secret' => config()->get('services.github.client_secret'),
             'code' => $code
         ];
         $url .= '?' . http_build_query($parameters);
