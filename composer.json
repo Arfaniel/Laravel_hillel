@@ -6,12 +6,12 @@
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
-        "geoip2/geoip2": "~2.0",
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^9.19",
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
-        "whichbrowser/parser": "^2.1"
+        "whichbrowser/parser": "^2.1",
+        "vagrant/hillel_geo_training_package": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",
@@ -23,6 +23,11 @@
         "phpunit/phpunit": "^9.5.10",
         "spatie/laravel-ignition": "^1.0"
     },
+    "repositories": [{
+        "type": "path",
+        "url": "../hillel_geo_training_packege"
+    }
+    ],
     "autoload": {
         "psr-4": {
             "App\\": "app/",

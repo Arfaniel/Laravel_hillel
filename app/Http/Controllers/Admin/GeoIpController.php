@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Visit;
-use App\Services\Geo\GeoServiceInterface;
+use Hillel\Geo\Test\GeoServiceInterface;
 
 
 class GeoIpController extends Controller

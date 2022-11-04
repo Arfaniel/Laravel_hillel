@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\Services\Geo\GeoServiceInterface;
-use App\Services\Geo\IpApiGeoService;
-use App\Services\Geo\MaxmindService;
+use Hillel\Geo\Test\GeoServiceInterface;
+use Hillel\Geo\Test\IpApiGeoService;
+use Hillel\Geo\Test\MaxmindService;
 use App\Services\UserAgent\UserAgentServiceInterface;
 use App\Services\UserAgent\WhichBrowserService;
 use GeoIp2\Database\Reader;
