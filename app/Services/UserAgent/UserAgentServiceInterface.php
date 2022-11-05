@@ -4,7 +4,7 @@ namespace App\Services\UserAgent;
 
 interface UserAgentServiceInterface
 {
-    public function GetBrowser(): ?string;
+    public function getBrowser(): ?string;
 
-    public function GetOs(): ?string;
+    public function getOs(): ?string;
 }

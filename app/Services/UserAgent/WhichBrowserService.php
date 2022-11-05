@@ -12,15 +12,15 @@ class WhichBrowserService implements UserAgentServiceInterface
     /**
      * @var Parser
      */
-    public function __construct()
+    public function __construct($userAgentString)
     {
-        $this->_data = new Parser($_SERVER['HTTP_USER_AGENT']);
+        $this->_data = new Parser($userAgentString);
     }
 
     /**
      * @return string|null
      */
-    public function GetOs(): ?string
+    public function getOs(): ?string
     {
         return $this->_data->os->toString();
     }
@@ -28,7 +28,7 @@ class WhichBrowserService implements UserAgentServiceInterface
     /**
      * @return string|null
      */
-    public function GetBrowser(): ?string
+    public function getBrowser(): ?string
     {
         return $this->_data->browser->toString();
     }

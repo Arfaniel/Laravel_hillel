@@ -37,7 +37,7 @@ class IpApiGeoService implements GeoServiceInterface
     /**
      * @return string|null
      */
-    public function GetIsoCode(): ?string
+    public function getIsoCode(): ?string
     {
         return $this->_data['continentCode'] ?? null;
     }
@@ -45,7 +45,7 @@ class IpApiGeoService implements GeoServiceInterface
     /**
      * @return string|null
      */
-    public function GetCountry(): ?string
+    public function getCountry(): ?string
     {
         return $this->_data['countryCode'] ?? null;
     }

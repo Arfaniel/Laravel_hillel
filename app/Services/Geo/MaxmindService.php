@@ -32,7 +32,7 @@ class MaxmindService implements GeoServiceInterface
     /**
      * @return string|null
      */
-    public function GetIsoCode(): ?string
+    public function getIsoCode(): ?string
     {
         return $this->_data->continent->code ?? null;
     }
@@ -40,7 +40,7 @@ class MaxmindService implements GeoServiceInterface
     /**
      * @return string|null
      */
-    public function GetCountry(): ?string
+    public function getCountry(): ?string
     {
         return $this->_data->country->isoCode ?? null;
     }
